@@ -308,6 +308,19 @@ export class MindMapSettingsTab extends PluginSettingTab {
           })
       );
 
+    //Code block background color
+    new Setting(containerEl)
+    .setName("CodeBlock Background Color")
+    .setDesc("Background color of the code block")
+    .addColorPicker((colorPicker) =>
+      colorPicker
+        .setValue(this.plugin.settings.codeBlockBgColor?.toString())
+        .onChange((value: string) => {
+          this.plugin.settings.codeBlockBgColor = value;
+          save();
+        })
+    );
+
     // animation duration
     new Setting(containerEl)
       .setName("Animation duration")

@@ -218,6 +218,7 @@ export default class MindmapView extends ItemView {
   }
 
   async update(content?: string) {
+    this.applyCodeBlockBgColor() 
     try {
       const markdown =
         typeof content === "string" ? content : await this.readMarkDown();
@@ -298,6 +299,13 @@ export default class MindmapView extends ItemView {
           ? colors[depth]
           : this.settings.defaultColor;
     };
+  }
+
+  applyCodeBlockBgColor() {
+    let style = this.svg.firstChild as SVGStyleElement;
+    let sheet: CSSStyleSheet = style?.sheet;
+    sheet.insertRule(`.markmap-foreign pre[class*=language-] { background-color: ${this.settings.codeBlockBgColor} }`, sheet.cssRules.length - 1);
+    sheet.insertRule(`.markmap-foreign code { background-color: ${this.settings.codeBlockBgColor} }`, sheet.cssRules.length - 1);
   }
 
   applyWidths() {

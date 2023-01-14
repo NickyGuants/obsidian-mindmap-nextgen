@@ -21,6 +21,8 @@ type MindMapSettings = {
   defaultColor: string;
   defaultColorThickness: string;
 
+  codeBlockBgColor: string;
+
   initialExpandLevel: number;
 
   coloring: "depth" | "branch" | "single";

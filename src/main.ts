@@ -15,7 +15,7 @@ const DEFAULT_SETTINGS: MindMapSettings = {
   spacingHorizontal: 80,
   paddingX: 8,
   color1: "#fed766",
-  color1Thickness: "8",
+  color1Thickness: "10",
 
   color2: "#2ab7ca",
   color2Thickness: "6",
@@ -26,6 +26,8 @@ const DEFAULT_SETTINGS: MindMapSettings = {
   defaultColor: "#000",
   defaultColorThickness: "2",
 
+  codeBlockBgColor: "#f5f2f0",
+  
   initialExpandLevel: -1,
 
   coloring: "depth",
